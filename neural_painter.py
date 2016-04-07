@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-# $File: gen.py
+# $File: neural_painter.py
 # $Date: Thu Apr 07 10:39:34 2016 +0800
 # $Author: Xinyu Zhou <zxytim[at]gmail[dot]com>
 
@@ -197,6 +197,7 @@ def run(args):
     if args.coord_bias:
         input_dim += 1
 
+    print('Compiling...')
     func = get_func(rng, nonlin, hidden_size=args.hidden_size,
                     nr_hidden=args.nr_hidden,
                     input_dim=input_dim,
@@ -205,13 +206,14 @@ def run(args):
                     output_nonlin=output_nonlin,
                     use_bias=args.use_bias)
 
+    print('Drawing...')
     img = draw(func, w, h, coord_bias=args.coord_bias)
 
     if args.output:
         output = args.output
+        name, ext = os.path.splitext(output)
         if args.auto_name:
-            name, ext = os.path.splitext(output)
-        name = name + '-' + args2name(args)
+            name = name + '-' + args2name(args)
         cv2.imwrite(name + ext, img)
     else:
         cv2.imshow('img', img)
