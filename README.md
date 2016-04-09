@@ -1,7 +1,7 @@
 # Neural Painter
 
 We use a random neural network: f(x, y) -> pixel to generate image.
-Under some architectural hypothesis, there are plenty of hyper parameters to be fiddle with.
+Under some architectural hypothesis, there are plenty of hyper parameters to be fiddled with.
 
 # Usage
 
