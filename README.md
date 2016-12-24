@@ -2,7 +2,7 @@
 We use a neural network that takes a coordinate (x, y) and output the
 corresponding RGB value to generate an image.
 
-With different random hyperparameters, the network can generate images
+With different random hyperparameters, the network generates images
 of large style variance.
 
 # Gallery
