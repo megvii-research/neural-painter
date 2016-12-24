@@ -54,7 +54,7 @@ NONLIN_TABLE = dict(
 See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for implementation. The code is based on theano.
 
 
-# Example Use
+# Try it on your own
 ```bash
 ./neural_painter.py --image_size 800x800 --hidden_size 100 --nr_hidden 4 --nonlin random_every_time --nr_channel 3 --output_nonlin identity --coord_bias --seed 42 --output 42.png
 ```
