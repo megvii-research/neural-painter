@@ -1,7 +1,9 @@
 # Neural Painter
+We use a neural network that takes a coordinate (x, y) and output the
+corresponding RGB value to generate an image.
 
-We use a random neural network: f(x, y) -> pixel to generate image.
-Under some architectural hypothesis, there are plenty of hyper parameters to be fiddled with.
+With different random hyperparameters, the network can generate images
+of large style variance.
 
 # Gallery
 
@@ -9,9 +11,7 @@ Under some architectural hypothesis, there are plenty of hyper parameters to be 
 
 <img class="screenshots" src="gallery/3-batch_norm:False-batch_norm_position:before_nonlin-coord_bias:True-hidden_size:100-image_size:1366x768-nonlin:random_every_time-nr_channel:3-nr_hidden:4-output_nonlin:identity-recurrent:False-seed:3-use_bias:False.jpg" alt="example image">
 
-# HOW
-We use a neural network that takes a coordinate (x, y) and output the
-corresponding RGB value to generate an image. THe is
+# Details
 The image is generated using a single-path feed-forward network with only
 fully-connected layers and batch-normalization, flavored with various
 nonlinearities and initialized with gaussian random weights.
@@ -50,6 +50,8 @@ NONLIN_TABLE = dict(
     square=lambda x: x**2
 )
 ```
+
+See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for implementation. The code is based on theano.
 
 
 # Example Use
