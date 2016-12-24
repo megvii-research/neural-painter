@@ -17,9 +17,9 @@ fully-connected layers and batch-normalization, flavored with various
 nonlinearities and initialized with gaussian random weights.
 
 The key to generate these intriguing images is the use of random nonlinearities
-from a large nonlinearity-pool at each layer.
+from a large nonlinearity pool at each layer, especially those discontinuous nonlinearities.
 
-Here are the nonlinearities we've used so far:
+Here are the nonlinearity pool we've used so far:
 ```python
 NONLIN_TABLE = dict(
     relu=T.nnet.relu,
