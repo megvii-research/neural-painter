@@ -3,18 +3,59 @@
 We use a random neural network: f(x, y) -> pixel to generate image.
 Under some architectural hypothesis, there are plenty of hyper parameters to be fiddled with.
 
-# Usage
-
-```bash
-./neural_painter.py --image_size 800x800 --hidden_size 100 --nr_hidden 4 --nonlin random_every_time --nr_channel 3 --output_nonlin identity --coord_bias --seed 42 --output 42.png
-```
-
 # Gallery
 
 <img class="screenshots" src="gallery/800x800.thumbnail.png" alt="thumbnail">
 
 <img class="screenshots" src="gallery/3-batch_norm:False-batch_norm_position:before_nonlin-coord_bias:True-hidden_size:100-image_size:1366x768-nonlin:random_every_time-nr_channel:3-nr_hidden:4-output_nonlin:identity-recurrent:False-seed:3-use_bias:False.jpg" alt="example image">
 
+# HOW
+We use a neural network that takes a coordinate (x, y) and output the
+corresponding RGB value to generate an image. THe is
+The image is generated using a single-path feed-forward network with only
+fully-connected layers and batch-normalization, flavored with various
+nonlinearities and initialized with gaussian random weights.
+
+The key to generate these intriguing images is the use of random nonlinearities
+from a large nonlinearity-pool at each layer.
+
+Here are nonlinearities we've used so far:
+```python
+NONLIN_TABLE = dict(
+    relu=T.nnet.relu,
+    tanh=T.tanh,
+    abs_tanh=lambda x: abs(T.tanh(x)),
+    sigmoid=T.nnet.sigmoid,
+    softplus=T.nnet.softplus,
+    sin=T.sin,
+    cos=T.cos,
+    sgn=T.sgn,
+    sort=lambda x: T.sort(x, axis=1),
+    abs=abs,
+    log_abs=lambda x: T.log(abs(x) + eps),  # this is awesome
+    log_abs_p1=lambda x: T.log(abs(x) + 1),
+    log_relu=lambda x: T.log(T.nnet.relu(x) + eps),
+    log_square=lambda x: T.log(x**2 + eps),  # just a scalar
+
+    xlogx_abs=lambda x: T.xlogx.xlogx(abs(x) + eps),
+    xlogx_abs_p1=lambda x: T.xlogx.xlogx(abs(x) + 1),
+    xlogx_relu=lambda x: T.xlogx.xlogx(T.nnet.relu(x) + eps),
+    xlogx_relu_p1=lambda x: T.xlogx.xlogx(T.nnet.relu(x) + 1),
+    xlogx_square=lambda x: T.xlogx.xlogx(x**2 + eps),
+
+    softmax=T.nnet.softmax,
+    logsoftmax=T.nnet.logsoftmax,
+    hard_sigmoid=T.nnet.hard_sigmoid,
+    identity=lambda x: x,
+    square=lambda x: x**2
+)
+```
+
+
+# Example Use
+```bash
+./neural_painter.py --image_size 800x800 --hidden_size 100 --nr_hidden 4 --nonlin random_every_time --nr_channel 3 --output_nonlin identity --coord_bias --seed 42 --output 42.png
+```
 
 
 # Related Links
