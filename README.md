@@ -19,7 +19,7 @@ nonlinearities and initialized with gaussian random weights.
 The key to generate these intriguing images is the use of random nonlinearities
 from a large nonlinearity-pool at each layer.
 
-Here are nonlinearities we've used so far:
+Here are the nonlinearities we've used so far:
 ```python
 NONLIN_TABLE = dict(
     relu=T.nnet.relu,
