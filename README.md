@@ -60,7 +60,7 @@ See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for i
 ```
 
 # Related Project
-- Npainter (Neural Painter in browser, by rupeshs)
+- Npainter (Neural Painter in browser, using RNN, by rupeshs)
 	- Demo: https://rupeshs.github.io/npainter/
 	- Github: https://github.com/rupeshs/npainter
 
