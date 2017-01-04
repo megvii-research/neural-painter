@@ -77,3 +77,10 @@ See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for i
 	- http://blog.otoro.net/2016/03/25/generating-abstract-patterns-with-tensorflow/
 - High resolution MNIST generator (CPPN + GAN/VAE)
 	- http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/
+
+# We are Hiring!
+We are researchers from **Megvii** (http://www.megvii.com), a Beijing based computer vision startup.
+We are booming and yearn for great talents like you!
+
+If you are interested or want to know more, send us your CV or anything you'd like to know to zxy at megvii dot com.
+
