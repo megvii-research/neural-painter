@@ -59,6 +59,11 @@ See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for i
 ./neural_painter.py --image_size 800x800 --hidden_size 100 --nr_hidden 4 --nonlin random_every_time --nr_channel 3 --output_nonlin identity --coord_bias --seed 42 --output 42.png
 ```
 
+# Related Project
+- Neural Painter Online (by rupeshs)
+	- Demo: https://rupeshs.github.io/npainter/
+	- Github: https://github.com/rupeshs/npainter
+
 
 # Related Links
 
