@@ -80,7 +80,7 @@ See https://github.com/zxytim/neural-painter/blob/master/neural_painter.py for i
 
 # We are Hiring!
 We are researchers from **Megvii** (http://www.megvii.com), a Beijing based computer vision startup.
-We are booming and yearn for great talents like you!
+We are booming and yearning for great talents like you!
 
 If you are interested or want to know more, send us your CV or anything you'd like to know to zxy at megvii dot com.
 
