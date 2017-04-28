@@ -11,6 +11,10 @@ of large style variance.
 
 <img class="screenshots" src="gallery/3-batch_norm:False-batch_norm_position:before_nonlin-coord_bias:True-hidden_size:100-image_size:1366x768-nonlin:random_every_time-nr_channel:3-nr_hidden:4-output_nonlin:identity-recurrent:False-seed:3-use_bias:False.jpg" alt="example image">
 
+# Videos
+[![Neural Painter Illustration Video 0](https://img.youtube.com/vi/ivQAN9X4MzI/0.jpg)](https://www.youtube.com/watch?v=ivQAN9X4MzI)
+[![Neural Painter Illustration Video 1](https://img.youtube.com/vi/1cA6m4YYiRI/0.jpg)](https://www.youtube.com/watch?v=1cA6m4YYiRI)
+
 # Details
 The image is generated using a single-path feed-forward network with only
 fully-connected layers and batch-normalization, flavored with various
